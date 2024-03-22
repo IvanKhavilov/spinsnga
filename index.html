@@ -94,7 +94,7 @@
         padding: 12px 12px 6px 12px;
         margin: 0;
         list-style: none;
-        width: 232px;
+        width: 240px;
         display: grid;
         grid-row-gap: 8px;
       }
@@ -268,13 +268,11 @@
         line-height: 19px;
         font-weight: 700;
         border-radius: 6px;
-        transition: all 0.5s;
         text-transform: uppercase;
         background: linear-gradient(180deg, rgb(15, 114, 124) 0%, rgb(0, 78, 86) 100%);
         box-shadow: 0 2px #00766f inset, 0 2px 0 0 rgb(0, 57, 65);
         border: 1px solid rgba(17, 134, 125, 0.5);
         color: rgb(255, 171, 73);
-        text-shadow: rgba(17, 0, 0, 0.3) 0px 2px 0px;
       }
       .log-in {
         margin-right: 5px;
@@ -297,6 +295,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         min-height: 450px;
+        margin-bottom: 70px;
         position: relative;
       }
       .main::after {
@@ -585,7 +584,6 @@
         border: 1px solid rgba(17, 134, 125, 0.3);
         background: linear-gradient(180deg, rgb(15, 114, 124) 0%, rgb(0, 78, 86) 100%);
         box-shadow: rgb(0, 118, 111) 0px 2px 0px 0px inset, rgb(0, 57, 65) 0px 2px 0px 0px;
-        transition: background 0.3s;
       }
       .footer__top-link:hover {
         background: linear-gradient(180deg, rgb(38, 145, 156) 0%, rgb(0, 78, 86) 100%);
@@ -620,18 +618,64 @@
         font-size: 14px;
         padding-top: 15px;
       }
+
+      .language__wrapp {
+        position: relative;
+      }
+      .language__btn {
+        cursor: pointer;
+        height: 100%;
+      }
+      .language__list {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 120%;
+        z-index: 1;
+        list-style: none;
+        padding: 8px;
+        margin: 0;
+        backdrop-filter: blur(5px);
+        min-width: 170px;
+        max-height: 300px;
+        overflow-y: scroll;
+        -ms-overflow-style: none; /* IE и Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+      .language__list-item {
+        margin-bottom: 10px;
+        padding: 10px 24px;
+        border-radius: 8px;
+        border: 1px solid rgba(17, 134, 125, 0.3);
+        background: linear-gradient(180deg, rgb(15, 114, 124) 0%, rgb(0, 78, 86) 100%);
+      }
+      .language__list-item:not(:last-child) {
+        margin-bottom: 10px;
+      }
+      .language__list-link {
+        color: rgb(255, 171, 73);
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 700;
+      }
+      .language__list-item:hover {
+        background: linear-gradient(180deg, rgb(38, 145, 156) 0%, rgb(0, 78, 86) 100%);
+      }
+      .language__wrapp input:checked ~ .language__list {
+        display: block;
+      }
       @media (max-width: 768px) {
         .popular {
           grid-template-columns: repeat(3, 1fr);
         }
         .footer__nav {
-          grid-template-columns: 100%;
+          grid-template-columns: repeat(2, 1fr);
         }
       }
       @media (max-width: 465px) {
-        .content {
-          padding-bottom: 0;
-        }
         .content__inner h2 {
           font-size: 24px;
           margin-bottom: 20px;
@@ -659,11 +703,10 @@
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
-          margin-bottom: 70px;
-          min-height: 310px;
+          min-height: 470px;
         }
         .main::after {
-          top: 22%;
+          top: 25%;
           width: 220px;
           height: 120px;
         }
@@ -673,7 +716,7 @@
           left: 0;
           bottom: 0;
           width: 100%;
-          height: 200px;
+          height: 190px;
           background-image: url('images/banner-leaves-mobile.webp');
           background-position: center;
           background-repeat: no-repeat;
@@ -708,6 +751,9 @@
         .footer__top-link {
           font-size: 12px;
           padding: 7px 18px;
+        }
+        .language__list-link {
+          font-size: 12px;
         }
       }
     </style>
@@ -896,7 +942,7 @@
     <section class="content">
       <div class="container">
         <div class="content__inner">
-          <h1>Bruno Casino site officiel en France 🇫🇷</h1>
+          <h1>Spinanga Casino France 🇫🇷</h1>
           <p>
             Il est difficile pour les jeunes casinos de rivaliser avec les clubs de jeu qui ont déjà beaucoup d'expérience. Bruno
             Casino, cependant, a réussi à le faire. Le site de jeu est apparu en 2022. Malgré la petite expérience, le casino en
@@ -1158,10 +1204,117 @@
       <div class="container">
         <div class="footer__inner">
           <div class="footer__top">
-            <a class="footer__top-link" href="#">
-              <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
-              <span>English</span>
-            </a>
+            <div class="language__wrapp">
+              <input type="checkbox" id="toggle" hidden />
+              <label for="toggle" class="language__btn footer__top-link">
+                <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                English
+              </label>
+              <ul class="language__list">
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+                <li class="language__list-item">
+                  <a class="language__list-link" href="#">
+                    <img src="images/language.svg" width="24" height="24" loading="lazy" alt="icon" />
+                    English
+                  </a>
+                </li>
+              </ul>
+            </div>
             <a class="footer__top-link" href="#">
               <svg width="24" height="24">
                 <use xlink:href="images/sprite.svg#help-centre" fill="#ffab49"></use>
@@ -1180,7 +1333,7 @@
               </ul>
             </div>
             <div class="footer__nav-item">
-              <p class="footer__nav-title">Security and Privacy</p>
+              <p class="footer__nav-title">Security</p>
               <ul class="footer__list">
                 <li class="footer__list-item"><a href="#">Privacy Policy</a></li>
                 <li class="footer__list-item"><a href="#">Responsible Gaming</a></li>
