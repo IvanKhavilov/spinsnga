@@ -46,6 +46,10 @@
         max-width: 100%;
         object-fit: cover;
       }
+      .content__inner h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
       .content__inner h2 {
         font-size: 24px;
         margin: 20px 0;
@@ -296,6 +300,8 @@
         min-height: 450px;
         margin-bottom: 70px;
         position: relative;
+        display: flex;
+        align-items: center;
       }
       .main::after {
         content: '';
@@ -467,8 +473,7 @@
         grid-gap: 35px;
         margin-bottom: 20px;
       }
-      .popular__item {
-        cursor: pointer;
+      .popular__link {
         position: relative;
       }
       .popular__link::before {
@@ -499,10 +504,6 @@
         background: linear-gradient(to bottom, rgba(0, 49, 56, 0) 0%, #003138 50%, #003138 100%);
         z-index: 2;
       }
-      .popular__link {
-        position: relative;
-        z-index: 6;
-      }
       .popular__img {
         overflow: hidden;
         position: relative;
@@ -511,7 +512,7 @@
       .popular__img img {
         transition: all 0.5s;
       }
-      .popular__item:hover img {
+      .popular__link:hover img {
         transform: scale(1.1);
       }
       .popular__title {
@@ -677,7 +678,6 @@
       @media (max-width: 465px) {
         .content__inner h1 {
           font-size: 36px;
-          margin-bottom: 20px;
         }
         .content__inner h2 {
           font-size: 24px;
@@ -984,166 +984,146 @@
             </a>
           </div>
           <div class="popular">
-            <div class="popular__item">
-              <a class="popular__link" href="go">
-                <div class="popular__img">
-                  <img src="images/top.avif" width="100%" height="100%" loading="lazy" alt="image game" />
-                </div>
-                <p class="popular__title">
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
-                  </svg>
-                  Top
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
-                  </svg>
-                </p>
-              </a>
-            </div>
-            <div class="popular__item">
-              <a class="popular__link" href="go">
-                <div class="popular__img">
-                  <img src="images/new.avif" width="100%" height="100%" loading="lazy" alt="image game" />
-                </div>
-                <p class="popular__title">
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
-                  </svg>
-                  new
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
-                  </svg>
-                </p>
-              </a>
-            </div>
-            <div class="popular__item">
-              <a class="popular__link" href="go">
-                <div class="popular__img">
-                  <img src="images/popular.avif" width="100%" height="100%" loading="lazy" alt="image game" />
-                </div>
-                <p class="popular__title">
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
-                  </svg>
-                  popular
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
-                  </svg>
-                </p>
-              </a>
-            </div>
-            <div class="popular__item">
-              <a class="popular__link" href="go">
-                <div class="popular__img">
-                  <img src="images/exclusive.avif" width="100%" height="100%" loading="lazy" alt="image game" />
-                </div>
-                <p class="popular__title">
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
-                  </svg>
-                  Exclusive
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
-                  </svg>
-                </p>
-              </a>
-            </div>
-            <div class="popular__item">
-              <a class="popular__link" href="go">
-                <div class="popular__img">
-                  <img src="images/bonusbuy.avif" width="100%" height="100%" loading="lazy" alt="image game" />
-                </div>
-                <p class="popular__title">
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
-                  </svg>
-                  Bonus Buys
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
-                  </svg>
-                </p>
-              </a>
-            </div>
-            <div class="popular__item">
-              <a class="popular__link" href="go">
-                <div class="popular__img">
-                  <img src="images/livegames.avif" width="100%" height="100%" loading="lazy" alt="image game" />
-                </div>
-                <p class="popular__title">
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
-                  </svg>
-                  Live Games
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
-                  </svg>
-                </p>
-              </a>
-            </div>
-            <div class="popular__item">
-              <a class="popular__link" href="go">
-                <div class="popular__img">
-                  <img src="images/megaways.avif" width="100%" height="100%" loading="lazy" alt="image game" />
-                </div>
-                <p class="popular__title">
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
-                  </svg>
-                  Megaways
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
-                  </svg>
-                </p>
-              </a>
-            </div>
-            <div class="popular__item">
-              <a class="popular__link" href="go">
-                <div class="popular__img">
-                  <img src="images/slots.avif" width="100%" height="100%" loading="lazy" alt="image game" />
-                </div>
-                <p class="popular__title">
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
-                  </svg>
-                  Slots
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
-                  </svg>
-                </p>
-              </a>
-            </div>
-            <div class="popular__item">
-              <a class="popular__link" href="go">
-                <div class="popular__img">
-                  <img src="images/tablegames.avif" width="100%" height="100%" loading="lazy" alt="image game" />
-                </div>
-                <p class="popular__title">
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
-                  </svg>
-                  Table Games
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
-                  </svg>
-                </p>
-              </a>
-            </div>
-            <div class="popular__item">
-              <a class="popular__link" href="go">
-                <div class="popular__img">
-                  <img src="images/allcasino.avif" width="100%" height="100%" loading="lazy" alt="image game" />
-                </div>
-                <p class="popular__title">
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
-                  </svg>
-                  All Games
-                  <svg class="icon" width="16" height="16">
-                    <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
-                  </svg>
-                </p>
-              </a>
-            </div>
+            <a class="popular__link" href="go">
+              <div class="popular__img">
+                <img src="images/top.avif" width="100%" height="100%" loading="lazy" alt="image game" />
+              </div>
+              <p class="popular__title">
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
+                </svg>
+                Top
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
+                </svg>
+              </p>
+            </a>
+            <a class="popular__link" href="go">
+              <div class="popular__img">
+                <img src="images/new.avif" width="100%" height="100%" loading="lazy" alt="image game" />
+              </div>
+              <p class="popular__title">
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
+                </svg>
+                new
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
+                </svg>
+              </p>
+            </a>
+            <a class="popular__link" href="go">
+              <div class="popular__img">
+                <img src="images/popular.avif" width="100%" height="100%" loading="lazy" alt="image game" />
+              </div>
+              <p class="popular__title">
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
+                </svg>
+                popular
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
+                </svg>
+              </p>
+            </a>
+            <a class="popular__link" href="go">
+              <div class="popular__img">
+                <img src="images/exclusive.avif" width="100%" height="100%" loading="lazy" alt="image game" />
+              </div>
+              <p class="popular__title">
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
+                </svg>
+                Exclusive
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
+                </svg>
+              </p>
+            </a>
+            <a class="popular__link" href="go">
+              <div class="popular__img">
+                <img src="images/bonusbuy.avif" width="100%" height="100%" loading="lazy" alt="image game" />
+              </div>
+              <p class="popular__title">
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
+                </svg>
+                Bonus Buys
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
+                </svg>
+              </p>
+            </a>
+            <a class="popular__link" href="go">
+              <div class="popular__img">
+                <img src="images/livegames.avif" width="100%" height="100%" loading="lazy" alt="image game" />
+              </div>
+              <p class="popular__title">
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
+                </svg>
+                Live Games
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
+                </svg>
+              </p>
+            </a>
+            <a class="popular__link" href="go">
+              <div class="popular__img">
+                <img src="images/megaways.avif" width="100%" height="100%" loading="lazy" alt="image game" />
+              </div>
+              <p class="popular__title">
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
+                </svg>
+                Megaways
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
+                </svg>
+              </p>
+            </a>
+            <a class="popular__link" href="go">
+              <div class="popular__img">
+                <img src="images/slots.avif" width="100%" height="100%" loading="lazy" alt="image game" />
+              </div>
+              <p class="popular__title">
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
+                </svg>
+                Slots
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
+                </svg>
+              </p>
+            </a>
+            <a class="popular__link" href="go">
+              <div class="popular__img">
+                <img src="images/tablegames.avif" width="100%" height="100%" loading="lazy" alt="image game" />
+              </div>
+              <p class="popular__title">
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
+                </svg>
+                Table Games
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
+                </svg>
+              </p>
+            </a>
+            <a class="popular__link" href="go">
+              <div class="popular__img">
+                <img src="images/allcasino.avif" width="100%" height="100%" loading="lazy" alt="image game" />
+              </div>
+              <p class="popular__title">
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-left" fill="#ffab49"></use>
+                </svg>
+                All Games
+                <svg class="icon" width="16" height="16">
+                  <use xlink:href="images/sprite.svg#decor-right" fill="#ffab49"></use>
+                </svg>
+              </p>
+            </a>
           </div>
         </div>
       </div>
